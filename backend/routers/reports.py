@@ -20,6 +20,7 @@ def create_report(data: ReportCreate, db: Session = Depends(get_db)):
         category=data.category,
         person_name=data.person_name,
         instagram=data.instagram,
+        location=data.location,
         description=data.description
     )
     db.add(new_report)
@@ -31,3 +32,9 @@ def create_report(data: ReportCreate, db: Session = Depends(get_db)):
 @router.get("/", response_model=list[ReportOut])
 def get_reports(db: Session = Depends(get_db)):
     return db.query(Report).all()
+
+
+@router.get("search/instagram/{instagram_user}", response_model=list[ReportOut])
+def get_reports_by_instagram(instagram_user: str, db: Session = Depends(get_db)):
+    instagram_user_lower = instagram_user.lower()
+    return db.query(Report).filter(Report.instagram.ilike(f"%{instagram_user_lower}%")).all()

@@ -9,4 +9,5 @@ class Report(Base):
     person_name = Column(String, index=True)
     instagram = Column(String, index=True)
     description = Column(String)
+    location = Column(String, index=True)
     created_at = Column(DateTime, server_default=func.now())
