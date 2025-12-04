@@ -1,10 +1,11 @@
 from pydantic import BaseModel
+from typing import Optional
 
 class ReportBase(BaseModel):
     category: str
     description: str
-    person_name: str
-    instagram: str
+    person_name: Optional[str] = None
+    instagram: Optional[str] = None
 
 class ReportCreate(ReportBase):
     pass
