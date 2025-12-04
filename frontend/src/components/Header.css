@@ -1,0 +1,83 @@
+.header {
+    background: linear-gradient(to right, #ffffff, var(--color-pastel-pink));
+    padding: 1rem 1.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-content {
+    max-width: 1400px;
+    /* Wider for spreadsheet view */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+@media (min-width: 768px) {
+    .header-content {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.logo h1 {
+    color: var(--color-wine-red);
+    font-family: var(--font-primary);
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: -0.5px;
+}
+
+.search-bar-container {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    flex-grow: 1;
+    margin: 0 2rem;
+}
+
+.search-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-pink-red);
+    opacity: 0.7;
+}
+
+.search-input {
+    width: 100%;
+    padding: 10px 12px 10px 40px;
+    border: 1px solid var(--color-pastel-pink);
+    border-radius: 4px;
+    /* More "Excel-like" square corners */
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    background-color: #fff;
+    outline: none;
+}
+
+.search-input:focus {
+    border-color: var(--color-pink-red);
+    box-shadow: 0 0 0 2px rgba(217, 32, 92, 0.1);
+}
+
+.publish-btn-header {
+    background-color: var(--color-wine-red);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    white-space: nowrap;
+}
+
+.publish-btn-header:hover {
+    background-color: var(--color-pink-red);
+}

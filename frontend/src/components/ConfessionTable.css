@@ -1,0 +1,150 @@
+.table-container {
+    overflow-x: auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e0e0e0;
+    margin-top: 1rem;
+}
+
+.confession-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--font-secondary);
+    font-size: 0.9rem;
+    min-width: 1000px;
+    /* Increased width for new columns */
+}
+
+.confession-table th {
+    background-color: #f9f9f9;
+    color: #666;
+    font-weight: 600;
+    text-align: left;
+    padding: 1rem;
+    border-bottom: 2px solid #eee;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.confession-table td {
+    padding: 1rem;
+    border-bottom: 1px solid #f0f0f0;
+    color: #333;
+    vertical-align: top;
+}
+
+.confession-table tr:hover {
+    background-color: #fff5f8;
+}
+
+.confession-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* Column Widths */
+.col-alias {
+    width: 12%;
+}
+
+.col-category {
+    width: 10%;
+}
+
+.col-cheater {
+    width: 15%;
+}
+
+.col-location {
+    width: 13%;
+}
+
+.col-confession {
+    width: 30%;
+}
+
+.col-social {
+    width: 10%;
+}
+
+.col-time {
+    width: 10%;
+}
+
+/* Cell Styles */
+.alias-badge-table {
+    background-color: var(--color-light-gray);
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-weight: 600;
+    color: #666;
+    font-size: 0.85rem;
+    white-space: nowrap;
+}
+
+.category-badge {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.cat-infidelidad {
+    background-color: #ffebee;
+    color: var(--color-wine-red);
+}
+
+.cat-funa {
+    background-color: #fff3e0;
+    color: #e65100;
+}
+
+.cheater-flex {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 600;
+    color: var(--color-wine-red);
+}
+
+.cheater-icon {
+    color: var(--color-pink-red);
+}
+
+.location-flex,
+.time-flex,
+.social-link-table {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.social-link-table {
+    color: var(--color-pink-red);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.social-link-table:hover {
+    text-decoration: underline;
+}
+
+.text-muted {
+    color: #ccc;
+}
+
+.cell-confession {
+    line-height: 1.5;
+}
+
+.no-results-table {
+    text-align: center;
+    padding: 3rem;
+    color: #888;
+    background: #fff;
+    border-radius: 8px;
+    border: 1px solid #eee;
+    margin-top: 1rem;
+}

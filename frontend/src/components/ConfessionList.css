@@ -1,0 +1,24 @@
+.confession-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    padding-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+    .confession-list {
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    }
+}
+
+.no-results {
+    text-align: center;
+    padding: 3rem;
+    color: #888;
+    font-size: 1.1rem;
+    background: #fff;
+    border-radius: 16px;
+    margin-top: 2rem;
+    border: 1px dashed #ddd;
+}
