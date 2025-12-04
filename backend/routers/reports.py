@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from database import SessionLocal
 from models.report import Report
@@ -34,7 +34,15 @@ def get_reports(db: Session = Depends(get_db)):
     return db.query(Report).all()
 
 
-@router.get("search/instagram/{instagram_user}", response_model=list[ReportOut])
+@router.get("/search/instagram/{instagram_user}", response_model=list[ReportOut])
 def get_reports_by_instagram(instagram_user: str, db: Session = Depends(get_db)):
     instagram_user_lower = instagram_user.lower()
-    return db.query(Report).filter(Report.instagram.ilike(f"%{instagram_user_lower}%")).all()
+    reports = db.query(Report).filter(Report.instagram.ilike(f"%{instagram_user_lower}%")).all()
+    
+    if not reports:
+        raise HTTPException(
+            status_code=404,
+            detail=f"No se encontró el usuario de Instagram '{instagram_user}' en el listado. Intenta con otro usuario de IG"
+        )
+    
+    return reports
